@@ -1,4 +1,9 @@
-/*SUPER llama al metodo padre e ignora el override*/
+/*SUPER llama al metodo padre e ignora el override
+* La herencia se escribe con una flecha hueca desde la clase que hereda hasta la clase padre
+* lookup method
+* no es bueno usar ifs dentro de clases si no herencia ya que el codigo a la larga se vuelve poco escalable
+* por ejemplo documento <- documento anillado en vez de un bool para ver si es documento anillado o no.
+* */
 
 public class Impresora{
 
