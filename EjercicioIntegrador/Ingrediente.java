@@ -11,6 +11,7 @@ public class Ingrediente {
         this.precio = precio;
     }
 
+
     public String getTipo() {
         return tipo;
     }
