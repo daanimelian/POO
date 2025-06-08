@@ -6,12 +6,10 @@ public class Carrera {
     private double distanciaKm;
     private HashSet<Corredor> listaCorredores= HashSet.newHashSet(1000);
     private boolean estaVigente=true;
-    private int puntosQueOtorga=0;
 
-    public Carrera(String nombre, double distancia, int puntos){
+    public Carrera(String nombre, double distancia){
         this.nombreCarrera = nombre;
         this.distanciaKm= distancia;
-        this.puntosQueOtorga = puntos;
     }
 
     public double getDistanciaKm(){
@@ -38,7 +36,4 @@ public class Carrera {
         return false;
     }
 
-    public int getPuntosQueOtorga() {
-        return puntosQueOtorga;
-    }
 }

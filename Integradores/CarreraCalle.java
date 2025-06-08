@@ -1,9 +1,7 @@
 package Integradores;
-
 public class CarreraCalle extends Carrera{
-
     public CarreraCalle(String nombre, double distancia) {
-        super(nombre, distancia, 10);
+        super(nombre, distancia);
     }
 
     @Override
@@ -14,6 +12,18 @@ public class CarreraCalle extends Carrera{
             fueInscripto=true;
         }
         return fueInscripto;
+    }
+
+    public int puntosQueOtorga(){
+        return 10;
+    }
+    public void darPuntos(){
+        for(Corredor corredor: getListaCorredores()){
+            if(corredor.getPuntos()<10){
+                corredor.setPuntos(this.puntosQueOtorga());
+            }
+        }
+
     }
 
 }

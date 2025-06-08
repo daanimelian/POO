@@ -40,8 +40,12 @@ public class Corredor {
         carrera.inscribirCorredor(this);
     }
 
-    public void setPuntos(){
+    public void setPuntos(int puntos){
+        this.puntosTotales+=puntos;
+    }
 
+    public int getPuntos(){
+        return this.puntosTotales;
     }
 
 
