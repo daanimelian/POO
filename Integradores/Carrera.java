@@ -1,22 +1,19 @@
 package Integradores;
 import java.util.HashSet;
 
-public class Carrera {
+public class Carrera implements Sponsorable {
     private String nombreCarrera;
-    private double distanciaKm;
+    private int distanciaKm;
     private HashSet<Corredor> listaCorredores= HashSet.newHashSet(1000);
     private boolean estaVigente=true;
 
-    public Carrera(String nombre, double distancia){
+    public Carrera(String nombre, int distancia){
         this.nombreCarrera = nombre;
         this.distanciaKm= distancia;
     }
 
-    public double getDistanciaKm(){
+    public int getDistanciaKm(){
         return this.distanciaKm;
-    }
-    public void anotarCorredor(Corredor corredor){
-        this.listaCorredores.add(corredor);
     }
 
     public boolean fueCorrida(){
@@ -25,6 +22,8 @@ public class Carrera {
 
     public void largada(){
         this.estaVigente=false;
+        this.darPuntosYDistancia();
+
 
     }
 
@@ -33,7 +32,29 @@ public class Carrera {
     }
 
     public boolean inscribirCorredor(Corredor corredor){
+        this.listaCorredores.add(corredor);
+        return true;
+    }
+
+    public int puntosQueOtorga(){
+        return 0;
+    }
+
+    public void darPuntosYDistancia(){
+        for(Corredor corredor: getListaCorredores()){
+                corredor.setPuntos(this.puntosQueOtorga());
+                corredor.actMayorDistancia(this);
+                corredor.sumarCarrera();
+            }
+    }
+
+    @Override
+    public boolean cumplisRequisitosDeSponsor() {
         return false;
     }
 
+    @Override
+    public String getNombre() {
+        return this.nombreCarrera;
+    }
 }

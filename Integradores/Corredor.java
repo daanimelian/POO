@@ -1,6 +1,7 @@
 package Integradores;
 
-public class Corredor {
+public class Corredor implements Sponsorable{
+
     private String nombreCorredor;
     private int cantCarreras;
     private double mayorDistancia;
@@ -12,7 +13,7 @@ public class Corredor {
         cantCarreras=0;
         mayorDistancia=0;
     }
-    public void sumarCarrera(){
+    void sumarCarrera(){
         this.cantCarreras++;
     }
 
@@ -40,7 +41,7 @@ public class Corredor {
         carrera.inscribirCorredor(this);
     }
 
-    public void setPuntos(int puntos){
+    void setPuntos(int puntos){
         this.puntosTotales+=puntos;
     }
 
@@ -48,5 +49,30 @@ public class Corredor {
         return this.puntosTotales;
     }
 
+    public int getCantCarreras() {
+        return cantCarreras;
+    }
+
+    public double getMayorDistancia() {
+        return mayorDistancia;
+    }
+
+    public boolean isCertMedico() {
+        return certMedico;
+    }
+
+    public int getPuntosTotales() {
+        return puntosTotales;
+    }
+
+    @Override
+    public boolean cumplisRequisitosDeSponsor() {
+        return this.getCantCarreras()>3;
+    }
+
+    @Override
+    public String getNombre() {
+        return this.nombreCorredor;
+    }
 
 }
