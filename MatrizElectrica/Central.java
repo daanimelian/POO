@@ -10,6 +10,9 @@ abstract class Central {
     public boolean estaExigida() {
         return getCantEnegia() >= capacidadMaxima;
     }
+    public boolean esContaminante(){
+        return getEmision() >= 70;
+    }
 
     public Propietario getPropietario() {
         return propietario;

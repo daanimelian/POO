@@ -20,4 +20,8 @@ public class ParqueEolico extends Central{
     public int getEmision() {
         return 0;
     }
+
+    public void incrementarGeneradores() {
+        generadores++;
+    }
 }

@@ -1,15 +1,15 @@
 package MatrizElectrica;
 
 public class Propietario {
-    int cuit;
+    long cuit;
     String nombre;
 
-    public Propietario(int cuit, String nombre){
+    public Propietario(long cuit, String nombre){
         this.cuit = cuit;
         this.nombre = nombre;
     }
 
-    public int getCuit() {
+    public long getCuit() {
         return cuit;
     }
 
